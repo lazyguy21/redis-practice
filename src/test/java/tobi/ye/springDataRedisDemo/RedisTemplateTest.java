@@ -8,13 +8,15 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.annotation.Resource;
+
 /**
  * Created by ye on 15-10-10.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:spring*.xml")
 public class RedisTemplateTest{
-    @Autowired
+    @Resource
     private StringRedisTemplate stringRedisTemplate;
     @Test
     public void test(){
