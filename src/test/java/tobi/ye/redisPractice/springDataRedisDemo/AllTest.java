@@ -1,4 +1,4 @@
-package tobi.ye.springDataRedisDemo;
+package tobi.ye.redisPractice.springDataRedisDemo;
 
 import org.junit.After;
 import org.junit.Before;

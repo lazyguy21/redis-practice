@@ -1,4 +1,4 @@
-package tobi.ye.redisPractice.redisJavaDemo;//package tobi.ye.redisJavaDemo;
+//package tobi.ye.redisPractice.redisJavaDemo;//package tobi.ye.redisJavaDemo;
 //
 //import java.util.HashMap;
 //import java.util.Map;

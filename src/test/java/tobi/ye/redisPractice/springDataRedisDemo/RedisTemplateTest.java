@@ -1,9 +1,7 @@
-package tobi.ye.springDataRedisDemo;
+package tobi.ye.redisPractice.springDataRedisDemo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -15,11 +13,13 @@ import javax.annotation.Resource;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:spring*.xml")
-public class RedisTemplateTest{
+public  class RedisTemplateTest{
     @Resource
     private StringRedisTemplate stringRedisTemplate;
     @Test
     public void test(){
         stringRedisTemplate.opsForValue().set("myname","fromxxcaonima");
+//        stringRedisTemplate.opsForValue().set();
     }
+
 }

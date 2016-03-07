@@ -7,7 +7,7 @@
 
     <bean id="jedisConnFactory"
           class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
-          p:hostName="10.168.248.36"
+          p:hostName="192.168.0.127"
           p:port="6379"
           p:usePool="true"/>
 

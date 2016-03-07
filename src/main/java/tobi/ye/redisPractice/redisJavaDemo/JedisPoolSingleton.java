@@ -8,7 +8,8 @@ import redis.clients.jedis.JedisPool;
 public class JedisPoolSingleton {
     private static JedisPool jedisPool;
     static {
-        jedisPool=new JedisPool("127.0.0.1");
+//        jedisPool=new JedisPool("127.0.0.1");
+        jedisPool=new JedisPool("192.168.0.127");
     }
     private JedisPoolSingleton(){
     }

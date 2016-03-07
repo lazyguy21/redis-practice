@@ -5,12 +5,17 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                                     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--<bean id="jedisConnFactory"-->
+          <!--class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"-->
+          <!--p:hostName="10.168.248.36"-->
+          <!--p:port="6379"-->
+          <!--p:usePool="true"-->
+            <!--p:password="xiaomairedis"/>-->
     <bean id="jedisConnFactory"
           class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
-          p:hostName="10.168.248.36"
+          p:hostName="192.168.0.127"
           p:port="6379"
-          p:usePool="true"
-            p:password="xiaomairedis"/>
+          p:usePool="true"/>
 
     <!-- redis template definition -->
     <bean id="stringRedisTemplate"
