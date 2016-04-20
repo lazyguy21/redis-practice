@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-                                    http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+                                    http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 自动扫描(自动注入) -->
+    <context:component-scan base-package="tobi.ye.redisPractice">
+        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+        <!--<context:exclude-filter type="annotation"-->
+                                <!--expression="org.springframework.web.bind.annotation.ControllerAdvice"/>-->
+    </context:component-scan>
+    <!--<bean id="jedisConnFactory"-->
+          <!--class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"-->
+          <!--p:hostName="192.168.0.127"-->
+          <!--p:port="6379"-->
+          <!--p:usePool="true"/>-->
     <bean id="jedisConnFactory"
           class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
-          p:hostName="192.168.0.127"
+          p:hostName="192.168.0.17"
           p:port="6379"
+          p:password="dakaRedis"
           p:usePool="true"/>
-
     <!-- redis template definition -->
+    <bean id="jackson2JsonRedisSerializer" class="org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer">
+        <constructor-arg value="java.lang.Object"/>
+    </bean>
     <bean id="stringRedisTemplate"
           class="org.springframework.data.redis.core.StringRedisTemplate"
-          p:connectionFactory-ref="jedisConnFactory"/>
+          p:connectionFactory-ref="jedisConnFactory"
+          p:valueSerializer-ref="jackson2JsonRedisSerializer"
+          p:hashValueSerializer-ref="jackson2JsonRedisSerializer"/>
 </beans>
