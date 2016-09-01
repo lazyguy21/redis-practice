@@ -21,7 +21,8 @@ public class JedisPoolTest {
          * 超时丢异常～
          * JedisConnectionException: Could not get a resource from the pool
          */
-        genericObjectPoolConfig.setMaxWaitMillis(3*1000L);
+//        genericObjectPoolConfig.setMaxWaitMillis(3*1000L);
+//        genericObjectPoolConfig.setBlockWhenExhausted(false);
         JedisPool jedisPool = new JedisPool(genericObjectPoolConfig, host);
 
         Runnable jedisTask = () -> {
