@@ -11,10 +11,12 @@ import tobi.ye.redisPractice.redisJavaDemo.JedisPoolSingleton;
  */
 public class AbstractJedisTest {
     static JedisPool jedisPool = JedisPoolSingleton.getInstance();
+
     Jedis jedis;
     @Before
     public void get(){
         jedis = jedisPool.getResource();
+
     }
     @After
     public void destroy(){

@@ -20,9 +20,19 @@ public class StringTest extends AbstractJedisTest {
 //      用EX 设置 过期时间 秒
 //        redis.clients.jedis.exceptions.JedisDataException: value sent to redis cannot be null
 //        传参还不能为null，切
-        String returnResult3 = jedis.set("mykey", "the value_of mykey","nxxx","ex",10);
+//        String returnResult3 = jedis.set("mykey", "the value_of mykey","nxxx","ex",10);
 
 
+    }
+    @Test
+    public void testAppend(){
+        int numActive = jedisPool.getNumActive();
+        System.out.println(numActive);
+        int numIdle = jedisPool.getNumIdle();
+        System.out.println(numIdle);
+        int numWaiters = jedisPool.getNumWaiters();
+        System.out.println(numWaiters);
+//        jedis.append("mykey", "appendValue");
     }
 
 }
