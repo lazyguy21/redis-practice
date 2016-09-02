@@ -21,4 +21,19 @@ public class HashTest extends AbstractJedisTest {
         Map<String, String> map = jedis.hgetAll("user:yyf2");
         System.out.println(map);
     }
+    @Test
+    public void hdel(){
+        Long counts = jedis.hdel("user:yyf", "name", "yeyinfei");
+        System.out.println(counts);
+    }
+    @Test
+    public void hexists(){
+        Boolean exists = jedis.hexists("user:yyf", "name");
+        System.out.println(exists);
+    }
+    @Test
+    public void hgetall(){
+        Map<String, String> yyfUser = jedis.hgetAll("user:yyf");
+        System.out.println(yyfUser);
+    }
 }
