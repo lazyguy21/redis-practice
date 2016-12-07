@@ -11,7 +11,7 @@ import java.util.Set;
 public class KeyTest extends AbstractJedisTest {
     @Test
     public void keys() {
-        Set<String> keys = jedis.keys("user*");
+        Set<String> keys = jedis.keys("*");
         System.out.println(keys);
     }
 
